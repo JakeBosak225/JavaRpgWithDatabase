@@ -73,7 +73,9 @@ VALUES('Enemy For Testing', 5,5, 0, 4, 1, 10, 1,10);
 
 SELECT * FROM enemy;
 
-INSERT INTO locations VALUES(1,'Your House', 'Just a house for testing purposes', 0,0,0,0,0,0);
+INSERT INTO locations VALUES(1,'Your House', 'Just a house for testing purposes', 2,0,3,0,0,0);
+INSERT INTO locations VALUES(2,'North House', 'Just a house for testing purposes', 0,0,0,0,0,0);
+INSERT INTO locations VALUES(3,'South House', 'Just a house for testing purposes', 0,0,0,0,0,0);
 
 SELECT * FROM locations;
 

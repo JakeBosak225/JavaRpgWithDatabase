@@ -2,11 +2,7 @@ package com.javarpg.model;
 
 import java.util.List;
 import java.util.Scanner;
-
 import javax.sql.DataSource;
-
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import com.javarpg.model.jdbc.JDBCPlayerDAO;
 
 public class Player {
@@ -40,6 +36,20 @@ public class Player {
 		this.playerLevel = playerLevel;
 		this.currentLocationId = currentLocationId;
 		this.eqquipedWeaponId = eqquipedWeaponId;
+	}
+
+	public void checkPlayerLevel() {
+		int levelBeforeCheck = playerLevel;
+
+		setPlayerLevel((playerExp / 100) + 1);
+
+		if (playerLevel > levelBeforeCheck) {
+			System.out.println("You leveled up!!!");
+			System.out.println("Max HP increased by 5!");
+
+			setMaxHP(maxHP + 5);
+			setCurrentHP(maxHP);
+		}
 	}
 
 	public Player createNewPlayer() {

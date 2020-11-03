@@ -61,6 +61,16 @@ public class JDBCPlayerDAO {
 		jdbcTemplate.update(query, id);
 	}
 
+	public void savePlayerData(Player player) {
+		String query = "UPDATE player SET player_name = ?, current_HP = ?, max_HP = ?, "
+				+ " player_exp = ?, player_level = ?, inventory_id = ?, current_location_id = ?, "
+				+ "currently_equipped_weapon = ? WHERE player_id = ?";
+
+		jdbcTemplate.update(query, player.getPlayerName(), player.getCurrentHP(), player.getMaxHP(),
+				player.getPlayerExp(), player.getPlayerLevel(), player.getInventoryId(), player.getCurrentLocationId(),
+				player.getEqquipedWeaponId(), player.getPlayerId());
+	}
+
 	private Player mapRowToPlayer(SqlRowSet row) {
 		Player player = new Player();
 		player.setPlayerId(row.getInt("player_id"));

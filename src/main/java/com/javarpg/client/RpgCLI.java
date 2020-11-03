@@ -49,7 +49,6 @@ public class RpgCLI {
 				if (player != null) {
 					System.out.println("Starting Game....");
 					app.playGame(player);
-					stillProcess = false;
 				}
 				break;
 
@@ -59,7 +58,6 @@ public class RpgCLI {
 				if (player != null) {
 					System.out.println("Starting Game....");
 					app.playGame(player);
-					stillProcess = false;
 				}
 				break;
 
